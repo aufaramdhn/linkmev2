@@ -1,11 +1,13 @@
 const btn = document.getElementById("toggleDark");
 const currentTheme = localStorage.getItem("theme");
+// const changeIcon = document.querySelector()
 
 if (currentTheme === "dark") {
     setDarkMode();
 } 
 
 btn.addEventListener("click", function(){
+    this.classList.toggle("ri-sun-line")
     setTheme();
 })
 
@@ -22,14 +24,14 @@ function setTheme() {
 function setDarkMode() {
     document.body.setAttribute("theme", "dark");
     localStorage.setItem("theme", "dark");
-    btn.classList.remove("ri-moon-line")
-    btn.classList.add("ri-sun-line")
+    // btn.classList.remove("ri-moon-line")
+    // btn.classList.add("ri-sun-line")
 }
 
 function setLightMode() {
     document.body.removeAttribute("theme");
     localStorage.setItem("theme", "light");
-    btn.classList.remove("ri-sun-line")
-    btn.classList.add("ri-moon-line")
+    // btn.classList.remove("ri-sun-line")
+    // btn.classList.add("ri-moon-line")
     
 }
